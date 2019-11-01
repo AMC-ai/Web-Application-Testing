@@ -43,7 +43,7 @@ const Dashboard = () => {
 
             </Display>
             <div className="btns">
-                <button onClick={() => handleBall()} className='ball-btn'>Ball</button>
+                <button onClick={() => handleBall()} id="balls" className='ball-btn'>Ball</button>
                 <button onClick={() => handleStrikes()} className='strike-btn'>Strike</button>
                 <button onClick={() => handleHit()} className='hit-btn'>Hit</button>
                 <button onClick={() => handleFoul()} className='foul-btn'>Foul</button>
