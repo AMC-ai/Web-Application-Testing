@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Display from './Display';
 
 const Dashboard = () => {
@@ -43,8 +43,8 @@ const Dashboard = () => {
 
             </Display>
             <div className="btns">
-                <button onClick={() => handleBall()} id="balls" className='ball-btn'>Ball</button>
-                <button onClick={() => handleStrikes()} className='strike-btn'>Strike</button>
+                <button onClick={() => handleBall()} data-testid="balls" className='ball-btn'>Ball</button>
+                <button onClick={() => handleStrikes()} data-testid="strikes" className='strike-btn'>Strike</button>
                 <button onClick={() => handleHit()} className='hit-btn'>Hit</button>
                 <button onClick={() => handleFoul()} className='foul-btn'>Foul</button>
             </div>

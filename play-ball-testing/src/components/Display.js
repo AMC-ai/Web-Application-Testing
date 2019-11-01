@@ -8,7 +8,7 @@ const Display = (props) => {
 
 
             <p>Balls: {props.balls}</p>
-            <p>Strikes: {props.strikes}</p>
+            <p data-testid="strikes-count">Strikes: {props.strikes}</p>
             <p></p>
             <p></p>
 
