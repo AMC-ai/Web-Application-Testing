@@ -1,19 +1,54 @@
 import React, { useState, useEffect } from "react";
+import Display from './Display';
 
-const PlayBall = () => {
+const Dashboard = () => {
+
+    const [ball, setBall] = useState(0);
+    const [strike, setStrike] = useState(0);
 
 
-    const handleStrike = () => {
-        if (props.strikes < 2) {
-            props.setStrikes(props.strikes + 1);
-        }
-        else if (props.strikes === 2) {
-            props.setStrikes(0);
-            // props.setFouls(0);
-            props.setBalls(0);
+    const handleBall = () => {
+        if (ball < 3) {
+            setBall(ball + 1);
+        } else {
+            setBall(0)
+            setStrike(0)
         }
     }
 
+    const handleStrikes = () => {
+        if (strike < 2) {
+            setStrike(strike + 1);
+        }
+        else {
+            setStrike(0);
+            setBall(0);
+        }
+    }
 
+    const handleFoul = () => {
+        if (strike < 2) {
+            setStrike(strike + 1)
+        }
+    }
+
+    const handleHit = () => {
+        setStrike(0);
+        setBall(0);
+    }
+
+    return (
+        <div>
+            <Display balls={ball} strikes={strike}>
+
+            </Display>
+            <div className="btns">
+                <button onClick={() => handleBall()} className='ball-btn'>Ball</button>
+                <button onClick={() => handleStrikes()} className='strike-btn'>Strike</button>
+                <button onClick={() => handleHit()} className='hit-btn'>Hit</button>
+                <button onClick={() => handleFoul()} className='foul-btn'>Foul</button>
+            </div>
+        </div>
+    );
 }
-export default PlayBall;
+export default Dashboard;

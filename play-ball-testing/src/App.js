@@ -1,11 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import './App.css';
-import Display from './components/Display';
+import Dashboard from './components/Dashboard';
 
-function App() {
+function App(props) {
 
-  // const [ball, setBall] = useState(0);
+  const [ball, setBall] = useState(0);
   // const [strike, setStrike] = useState(0);
   // const [hit, setHit] = useState(0);
   // const [faul, setFaul] = useState(0);
@@ -13,19 +13,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Display></Display>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <Dashboard>
+
+        </Dashboard>
+
       </header>
     </div>
   );
